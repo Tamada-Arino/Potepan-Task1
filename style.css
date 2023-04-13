@@ -1,0 +1,311 @@
+body{
+    margin:0;
+    overflow-x: hidden;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color:#555;
+    transition: 0.3s;
+}
+
+li{
+    list-style: none;
+    font-size: 0.85rem;
+    text-align: center;
+}
+li span{
+    font-size: 0.5rem;
+}
+.topImage-wrapper{
+    background-image:url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+    background-position:right 50% top;
+    background-size: cover;
+}
+#checkbox{
+    display: none;
+}
+
+
+/* HEADER */
+
+.nav-content ul{
+    display: flex;
+    gap:30px;
+    align-items: center;
+}
+header img{
+    width:180px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin:0 3%;
+    align-items: center;
+}
+
+/* FIRST VIEW */
+.firstView-img{
+    display: none;
+}
+.firstView-contain h2{
+    font-size: 2.25rem;
+    width: fit-content;
+    text-align: center;
+}
+.imgContain{
+    display: flex;
+    gap:10px;
+    margin:30px 0;
+    align-items: center;
+    max-width: fit-content;
+}
+.btn-orange{
+    color:#fff;
+    padding:20px 30px;
+    background:#ff9800;
+    border-radius:9999px;
+}
+.btn-orange:hover{
+    color:#fff;
+    background:#ffc670;
+    transition: 0.3s;
+}
+.btn-white{
+    padding:20px;
+    background:#fff;
+    border-radius:9999px;
+    border:1px solid #b0b0b0;
+    margin-left: 15px;
+}
+.gray{
+    margin-top:60px;
+    padding:30px 0;
+    color:#b0b0b0;
+    font-size: 0.5rem;
+}
+.gray p{
+    margin:0;
+}
+.firstView-contain{
+    max-width:950px;
+    margin:0 auto;
+}
+
+/* ABOUT */
+.About{
+    padding: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    color:#fff;
+    background-color:#ff9800;
+}
+.About a{
+    color:#fff;
+}
+h2{
+    font-size:2rem;
+}
+.About__video{
+    width:auto;
+    max-width:500px;
+}
+.About div{
+    max-width: 450px;
+}
+.About img{
+    position:relative;
+    top:0.2rem;
+}
+
+
+
+/* ハンバーガーメニュー */
+@media(max-width:1080px){
+    .topImage-wrapper{
+        margin-top: 50px;
+        background-position: right 30% top;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        background:#fff;
+        height:50px;
+        width: 100%;
+        padding:0 3%;
+        margin: 0;
+        box-sizing:border-box;
+        z-index: 100;
+    }
+    header img{
+        width:150px;
+    }
+    .firstView-contain{
+        width:auto;
+    }
+    /* ハンバーガーの見た目 */
+    .menu-trigger{
+        display: block;
+        width:30px;
+        height: 23px;
+        position: relative;
+    }
+    .HeaderNavHamburger__line{
+        width:100%;
+        height: 3px;
+        border-radius: 3px;
+        background: #333;
+        position: absolute;
+        left: 0;
+        transition: all 0.4s;
+    }
+    .HeaderNavHamburger__line:nth-child(1){
+        top:0%;
+    }
+    .HeaderNavHamburger__line:nth-child(2){
+        top:50%;
+    }
+    .HeaderNavHamburger__line:nth-child(3){
+        top:100%;
+    }
+    /* ハンバーガーメニューを押した時の画面 */
+    .nav-content{
+        background-color: rgba(0,0,0,.8);
+        position:fixed;
+        top:50px;
+        left:0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: 0.4s;
+    }
+    .nav-list{
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 50px 0;
+        gap:50px;
+    }
+    .nav-list a{
+        color:#fff;
+        /* text-align: center; */
+    }
+    .nav-list a span{
+        color:#ff9800;
+    }
+    /*チェックボックスにチェックが入ったら*/
+    #checkbox:checked + label .HeaderNavHamburger__line:nth-child(1) {
+    transform: translateY(11px) rotate(-45deg);
+    }
+    #checkbox:checked + label .HeaderNavHamburger__line:nth-child(2) {
+    opacity: 0;
+    }
+    #checkbox:checked + label .HeaderNavHamburger__line:nth-child(3) {
+    transform: translateY(-11px) rotate(45deg);
+    }
+    #checkbox:checked + label + .nav-content {
+    transform: translateX(0%);
+    }
+
+    .firstView-contain{
+        width:fit-content;
+        padding-top:50px;
+    }
+
+
+
+
+    .About{
+        flex-direction: column;
+        gap:0;
+        padding:35px 90px;
+        margin:0 auto;
+    }
+    .About video{
+        width:auto;
+        max-width:100%;
+    }
+    .About h2{
+        margin:15px 0;
+    }
+    .About div{
+        width:auto;
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* モバイル版 */
+@media(max-width:650px){
+    /* HEADER */
+ 
+    .topImage-wrapper{
+        background-image: none;
+        position: relative;
+        margin-bottom: 300px;
+    }
+
+    /* FIRST VIEW */
+
+    .firstView-img{
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+        
+    }
+    .firstView-contain{
+        position:absolute;
+        top:55%;
+        width:100%;
+        height: auto;
+       padding-top: 0;
+    }
+    
+    .imgContain{
+        gap:6px;
+        width:fit-content;
+        margin:0 auto 30px;
+    }
+    .imgContain img{
+        width: auto;
+        max-width: 100%;
+    }
+
+    .firstView-contain h2{
+        font-size:1.5rem;
+        margin:0 auto 30px;
+    }
+    .btn-orange{
+        display: block;
+        text-align: center;
+        padding:20px;
+        margin:0 5%;
+    }
+    .btn-white{
+        display: none;
+    }
+    .gray{
+        font-size:0.75rem;
+        width:95%;
+        padding:10px;
+        margin-top:10px;
+    }
+
+    /* ABOUT */
+
+    .About{
+        padding:35px;
+    }
+    .About video{
+        max-width:100%;
+    }
+    .About h2{
+        margin:15px 0;
+        
+    }
+}
